@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface WeatherForecast {
   date: string;
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit {
   public forecasts: WeatherForecast[] = [];
   public bookClubs: BookClub[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
     this.getBookCLubs();
@@ -37,6 +38,10 @@ export class AppComponent implements OnInit {
         console.error(error);
       }
     );
+  }
+
+  viewBookClub(bookClubId: number){
+    this.router.navigate(['/book-club-component', bookClubId]);
   }
 
   title = 'bookclubapp.client';
