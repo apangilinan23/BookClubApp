@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookClubApp.Server", "BookClubApp.Server\BookClubApp.Server.csproj", "{6FAEAA86-2C4D-4693-885D-EF69464380E2}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "bookclubapp.client", "bookclubapp.client\bookclubapp.client.esproj", "{10A6CB74-DFED-4A9F-A894-8543869A520D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FAEAA86-2C4D-4693-885D-EF69464380E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FAEAA86-2C4D-4693-885D-EF69464380E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FAEAA86-2C4D-4693-885D-EF69464380E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FAEAA86-2C4D-4693-885D-EF69464380E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10A6CB74-DFED-4A9F-A894-8543869A520D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A6CB74-DFED-4A9F-A894-8543869A520D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A6CB74-DFED-4A9F-A894-8543869A520D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{10A6CB74-DFED-4A9F-A894-8543869A520D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A6CB74-DFED-4A9F-A894-8543869A520D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10A6CB74-DFED-4A9F-A894-8543869A520D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A40613D-6570-4BDD-B9BB-82D2BC765D73}
+	EndGlobalSection
+EndGlobal
