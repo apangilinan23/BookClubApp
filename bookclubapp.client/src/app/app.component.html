@@ -1,29 +1,5 @@
-﻿<h1 id="tableLabel">Book Clubs</h1>
-<div>
-    <table class="table table-bordered" *ngIf="bookClubs">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th style="width: 15%;">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let bookClub of bookClubs">
-                <td>{{ bookClub.bookClubTitle }}</td>
-                <td>
-                    <span>
-                        <button class="btn" (click)="viewBookClub(bookClub.bookClubId)"><i class="fa fa-eye"></i></button>
-                        <button class="btn"><i class="fa fa-trash-o"></i></button>
-                    </span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
-    <div class="pr-5"></div>
-    <div class="row">
-        <div class="col-4">
-            <button class="btn btn-primary"><i class="fa fa-plus"></i> Add new Club</button>           
-        </div>  
-  </div>
+﻿<div class="row">    
+    <router-outlet></router-outlet>
+    <book-club (onEdit)="onEditBookClub($event)" *ngIf="!hideComponent">        
+    </book-club>    
 </div>

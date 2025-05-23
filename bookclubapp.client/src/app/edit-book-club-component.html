@@ -1,0 +1,9 @@
+<div class="edit-book-club mt-5" *ngIf="!hideComponent">
+    <form>
+    <div class="mb-5">
+        <input type="text" class="form-control mb-2" id="formGroupExampleInput" value="{{bookClubId}}">
+        <button class="btn btn-primary" (click)="back()"><i class="fa fa-arrow-left"></i>Back</button>&nbsp;
+        <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Save</button>
+    </div>
+    </form>
+</div>
