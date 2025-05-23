@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {  Router } from '@angular/router';
+import { environment } from './../environments/environment';
 
 
 interface BookClub {
@@ -14,16 +15,17 @@ interface BookClub {
   styleUrl: './book-club-component.css'
 })
 export class BookClubComponent implements OnInit {
+  apiUrl :string = `${environment.apiUrl}`;
   public bookClubs: BookClub[] = [];
   constructor(private http: HttpClient, private router: Router) { }
 
   @Output() onEdit = new EventEmitter<boolean>();
 
   ngOnInit() {
-    this.getBookCLubs();
+    this.getBookClubs();    
   }
 
-  getBookCLubs() {
+  getBookClubs() {
     this.http.get<BookClub[]>('/bookclub').subscribe(
       (result) => {
         this.bookClubs = result;

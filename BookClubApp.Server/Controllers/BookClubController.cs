@@ -1,10 +1,12 @@
 using BookClubApp.Server.Models;
 using BookClubApp.Server.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookClubApp.Server.Controllers
 {
     [ApiController]
+    [AllowAnonymous]
     [Route("[controller]")]
     public class BookClubController : ControllerBase
     {
@@ -15,10 +17,16 @@ namespace BookClubApp.Server.Controllers
             _bookClubService = bookClubService;
         }
 
-        [HttpGet(Name = "GetBookClub")]
-        public IEnumerable<BookClub> Get()
+        [HttpGet()]
+        public IEnumerable<BookClub> GetAll()
         {
             return _bookClubService.GetAll();
+        }
+
+        [HttpGet("{bookClubId}")]
+        public BookClub GetBookClubById(int bookClubId)
+        {
+            return _bookClubService.Get(bookClubId);
         }
     }
 }
