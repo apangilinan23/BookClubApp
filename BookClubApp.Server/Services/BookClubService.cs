@@ -33,6 +33,16 @@ namespace BookClubApp.Server.Services
             }
             return result;
         }
+
+        public BookClub Update(BookClub bookClub)
+        {
+            var bookClubToUpdate = _context.BookClubs.FirstOrDefault(x => x.BookClubId == bookClub.BookClubId);
+            bookClubToUpdate.BookClubId = bookClub.BookClubId;
+            bookClubToUpdate.BookClubTitle = bookClub.BookClubTitle;
+            _context.SaveChanges();
+
+            return bookClubToUpdate;
+        }
     }
 
 

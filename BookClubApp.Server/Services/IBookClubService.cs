@@ -7,5 +7,7 @@ namespace BookClubApp.Server.Services
         public List<BookClub> GetAll();
 
         public BookClub Get(int bookClubId);
+
+        public BookClub Update(BookClub bookClub);
     }
 }

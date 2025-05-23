@@ -42,7 +42,6 @@ export class BookClubComponent implements OnInit {
         console.log(err)
       }).then(() => {
         this.onEdit.emit(true)
-        // window.location.reload();        
       });
   }
 }

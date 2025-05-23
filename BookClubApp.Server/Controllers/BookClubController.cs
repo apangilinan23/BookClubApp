@@ -28,5 +28,20 @@ namespace BookClubApp.Server.Controllers
         {
             return _bookClubService.Get(bookClubId);
         }
+
+        [HttpPut]
+        public IActionResult Update(BookClub bookClub)
+        {
+            var model = new BookClub
+            {
+                BookClubId = bookClub.BookClubId,
+                BookClubTitle = bookClub.BookClubTitle
+            };
+
+            var updatedBookClub = _bookClubService.Update(model);
+
+            return Ok(updatedBookClub);
+        }
+
     }
 }
