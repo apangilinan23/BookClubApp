@@ -1,9 +1,8 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, ReactiveFormsModule  } from '@angular/forms';
-import { BookClubComponent } from './book-club-component';
+import { FormBuilder } from '@angular/forms';
 
 
 interface BookClub {
@@ -30,15 +29,11 @@ export class EditBookClubComponent implements OnInit {
     private formBuilder: FormBuilder) {
   }
 
-  onSubmit(): void {    
-    console.log(this.editBookClubForm.value.bookClubId);
-    console.log(this.editBookClubForm.value.bookClubTitle);
-    
-    
-
+  onSubmit(): void {
     this.http.put('/bookclub', this.editBookClubForm.value).subscribe(
       (result) => {
         alert('success');
+        this.back();
       }, (error => {
         alert('error');
       }));

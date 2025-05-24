@@ -7,13 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   public hideComponent: boolean = false;
+  
   ngOnInit(): void {
     this.hideComponent = false;
   }
 
-
   onEditBookClub(willHide: boolean){
     this.hideComponent = willHide;
   }
+
+  onAddBookClub(willHide: boolean){
+    this.hideComponent = willHide;
+  }
+
   title = 'Book club app';
 }

@@ -1,5 +1,5 @@
 ﻿<div class="row">    
     <router-outlet></router-outlet>
-    <book-club (onEdit)="onEditBookClub($event)" *ngIf="!hideComponent">        
+    <book-club (onEdit)="onEditBookClub($event)" (onAdd)="onAddBookClub($event)" *ngIf="!hideComponent">        
     </book-club>    
 </div>

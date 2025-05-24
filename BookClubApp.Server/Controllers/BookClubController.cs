@@ -43,5 +43,24 @@ namespace BookClubApp.Server.Controllers
             return Ok(updatedBookClub);
         }
 
+        [HttpPost]
+        public IActionResult Add(BookClub bookClub)
+        {
+            var model = new BookClub
+            {   
+                BookClubTitle = bookClub.BookClubTitle
+            };
+
+            _bookClubService.Add(model);
+            return Ok(model);
+        }
+
+        [HttpDelete("{bookClubId}")]
+        public IActionResult Delete(int bookClubId)
+        {
+            var deleteResult = _bookClubService.Delete(bookClubId);
+            return Ok(deleteResult);
+        }
+
     }
 }

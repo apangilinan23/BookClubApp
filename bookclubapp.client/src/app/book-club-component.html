@@ -3,8 +3,8 @@
     <table class="table table-bordered" *ngIf="bookClubs">
         <thead>
             <tr>
-                <th>Title</th>
-                <th style="width: 15%;">Actions</th>
+                <th class="display-6">Club name</th>
+                <th class="display-6" style="width: 15%;">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -12,9 +12,10 @@
                 <td>{{ bookClub.bookClubTitle }}</td>
                 <td>
                     <span>
-                        <button class="btn" (click)="viewBookClub(bookClub.bookClubId)"><i class="fa fa-edit"></i></button>
-                        <button class="btn"><i class="fa fa-eye"></i></button>
-                        <button class="btn"><i class="fa fa-trash-o"></i></button>
+                        <button class="btn" (click)="editBookClub(bookClub.bookClubId)" title="Edit"><i
+                                class="fa fa-edit"></i></button>
+                        <button class="btn"><i class="fa fa-eye" title="View"></i></button>
+                        <button class="btn" (click)="deleteBookClub(bookClub.bookClubId)" title="Delete"><i class="fa fa-trash-o"></i></button>
                     </span>
                 </td>
             </tr>
@@ -24,7 +25,7 @@
     <div class="pr-5"></div>
     <div class="row">
         <div class="col-4">
-            <button class="btn btn-primary"><i class="fa fa-plus"></i> Add new Club</button>           
-        </div>  
-  </div>
+            <button class="btn btn-primary" (click)="addNewClub()"><i class="fa fa-plus"></i> Add new Club</button>
+        </div>
+    </div>
 </div>

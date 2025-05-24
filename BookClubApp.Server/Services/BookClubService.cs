@@ -15,6 +15,39 @@ namespace BookClubApp.Server.Services
             _logger = logger;
         }
 
+        public void Add(BookClub bookClub)
+        {
+            try
+            {
+                _context.BookClubs.Add(bookClub);
+                _context.SaveChanges();
+            }
+            catch (Exception ex) 
+            {
+                _logger.LogError(ex.Message);
+            }            
+        }
+
+        public bool Delete(int bookClubId)
+        {
+            var result = false;
+            try
+            {
+                var clubToRemove = _context.BookClubs.FirstOrDefault(x => x.BookClubId == bookClubId);
+                if (clubToRemove == null)
+                    return false;
+                _context.BookClubs.Remove(clubToRemove);
+                _context.SaveChanges();
+                result = true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e.InnerException?.Message);
+                result = false;
+            }
+            return result;
+        }
+
         public BookClub Get(int bookClubId)
         {
             return _context.BookClubs.FirstOrDefault(x => x.BookClubId == bookClubId);

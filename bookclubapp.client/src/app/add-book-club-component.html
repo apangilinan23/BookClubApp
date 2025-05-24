@@ -1,22 +1,16 @@
-<div class="edit-book-club mt-5" *ngIf="!hideComponent">
-    <form [formGroup]="editBookClubForm" (ngSubmit)="onSubmit()">
+<div class="add-book-club mt-5" *ngIf="!hideComponent">
+    <form [formGroup]="addBookClubForm" (ngSubmit)="onSubmit()">
         <div class="mb-3">
             <div class="row">
                 <div class="col-4">
                     <label for="bookClubTitle">
-                        Club Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Book Club Title
                     </label>
                 </div>
-
             </div>
-
             <input type="text" formControlName="bookClubTitle" class="form-control mb-2" id="bookClubTitle"
-                value="{{bookClub.bookClubTitle}}">
-        </div>
-        <div class="mb-3">
-            <input type="hidden" formControlName="bookClubId" class="form-control mb-2" id="bookClubId"
-                value="{{bookClub.bookClubId}}">
-        </div>
+            placeholder="New Book club name...">
+        </div>        
         <div class="row">
             <div class="col-4">
                 <button class="btn btn-primary" (click)="back()"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp; Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>&nbsp;
