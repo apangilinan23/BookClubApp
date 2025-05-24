@@ -8,6 +8,8 @@
 
         public bool BookCompleted { get; set; }
 
-        public int BookId { get; set; }
+        public int? BookClubId { get; set; }
+
+        public BookClub? BookClub { get; set; }
     }
 }

@@ -13,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IBookClubService, BookClubService>();
+builder.Services.AddScoped<IBookClubMemberService, BookClubMemberService>();
 
 builder.Services.AddDbContext<BookClubAppContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetValue<string>("ConnectionStrings:Main")));

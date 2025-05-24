@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace BookClubApp.Server.Controllers
 {
     [ApiController]
-    [AllowAnonymous]
     [Route("[controller]")]
     public class BookClubController : ControllerBase
     {
