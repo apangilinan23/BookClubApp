@@ -1,5 +1,4 @@
-﻿using BookClubApp.Server.Models;
-using BookClubApp.Server.Services;
+﻿using BookClubApp.Server.Services;
 using BookClubApp.Server.View_Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +9,7 @@ namespace BookClubApp.Server.Controllers
     public class BookClubMemberController : ControllerBase
     {
         private readonly IBookClubMemberService _memberService;
+
         public BookClubMemberController(IBookClubMemberService memberService)
         {
             _memberService = memberService;

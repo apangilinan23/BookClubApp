@@ -1,6 +1,5 @@
 ﻿using BookClubApp.Server.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata;
 
 namespace BookClubApp.Server.Data
 {
@@ -33,19 +32,7 @@ namespace BookClubApp.Server.Data
             .HasMany(e => e.Members)
             .WithOne(e => e.BookClub)
             .HasForeignKey(e => e.BookClubId)
-            .IsRequired(false);
-
-            modelBuilder.Entity<Book>()
-            .HasOne(e => e.BookClubMember)
-            .WithOne(e => e.Book)
-            .HasForeignKey<BookClubMember>(e => e.BookId)
-            .IsRequired(false);
-
-            modelBuilder.Entity<Member>()
-            .HasOne(e => e.BookClubMember)
-            .WithOne(e => e.Member)
-            .HasForeignKey<BookClubMember>(e => e.MemberId)
-            .IsRequired(false);
+            .IsRequired(false);            
         }
     }
 }

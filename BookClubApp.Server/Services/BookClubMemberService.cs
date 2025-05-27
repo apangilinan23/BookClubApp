@@ -1,8 +1,6 @@
 ﻿using BookClubApp.Server.Controllers;
 using BookClubApp.Server.Data;
-using BookClubApp.Server.Models;
 using BookClubApp.Server.View_Models;
-using static System.Reflection.Metadata.BlobBuilder;
 
 namespace BookClubApp.Server.Services
 {

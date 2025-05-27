@@ -1,6 +1,5 @@
 using BookClubApp.Server.Models;
 using BookClubApp.Server.Services;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookClubApp.Server.Controllers
@@ -60,6 +59,5 @@ namespace BookClubApp.Server.Controllers
             var deleteResult = _bookClubService.Delete(bookClubId);
             return Ok(deleteResult);
         }
-
     }
 }
