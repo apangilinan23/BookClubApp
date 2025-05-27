@@ -38,6 +38,7 @@ namespace BookClubAppTests
             //assert
             Assert.NotNull(result);
             Assert.AreEqual("Test", result.FirstOrDefault().BookClubTitle);
+            _bookClubService.Verify(x => x.GetAll(), Times.Once);
         }
     }
 }

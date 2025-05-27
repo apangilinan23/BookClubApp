@@ -41,6 +41,7 @@ namespace BookClubAppTests
             //assert
             Assert.NotNull(result);
             Assert.AreEqual("John Doe", result.FirstOrDefault().Name);
+            _bookClubMemberService.Verify(x => x.GetAll(It.IsAny<int>()), Times.Once);
         }
     }
 }
