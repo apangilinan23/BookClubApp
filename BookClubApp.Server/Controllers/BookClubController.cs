@@ -30,13 +30,10 @@ namespace BookClubApp.Server.Controllers
         [HttpPut]
         public IActionResult Update(BookClub bookClub)
         {
-            var model = new BookClub
-            {
-                BookClubId = bookClub.BookClubId,
-                BookClubTitle = bookClub.BookClubTitle
-            };
+            if (bookClub == null)
+                return BadRequest();
 
-            var updatedBookClub = _bookClubService.Update(model);
+            var updatedBookClub = _bookClubService.Update(bookClub);
 
             return Ok(updatedBookClub);
         }
@@ -44,13 +41,11 @@ namespace BookClubApp.Server.Controllers
         [HttpPost]
         public IActionResult Add(BookClub bookClub)
         {
-            var model = new BookClub
-            {   
-                BookClubTitle = bookClub.BookClubTitle
-            };
+            if(bookClub == null)
+                return BadRequest();
 
-            _bookClubService.Add(model);
-            return Ok(model);
+            _bookClubService.Add(bookClub);
+            return Ok(bookClub);
         }
 
         [HttpDelete("{bookClubId}")]
