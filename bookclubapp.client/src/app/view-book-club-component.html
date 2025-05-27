@@ -14,10 +14,10 @@
                     <td>{{ bookClubMember.name }}</td>
                     <td><button class="btn" (click)="getBooksByMember(bookClubMember.memberId)" title="View books"><i
                                 class="fa fa-book"></i> {{bookClubMember.booksOnHand}}</button></td>
-                    <td *ngIf="bookClubMember.booksRead > 0"><span style="color: green;"><i
+                    <td *ngIf="bookClubMember.booksRead > 20"><span style="color: green;"><i
                                 class="fa fa-check-circle-o"></i>
                             {{bookClubMember.booksRead}}</span></td>
-                    <td *ngIf="bookClubMember.booksRead < 1"><span style="color: red;"><i
+                    <td *ngIf="bookClubMember.booksRead < 20"><span style="color: red;"><i
                                 class="fa fa-check-circle-o"></i>
                             {{bookClubMember.booksRead}}</span></td>
 
