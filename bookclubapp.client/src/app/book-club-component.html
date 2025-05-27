@@ -1,4 +1,4 @@
-﻿<h1 id="tableLabel">Book Clubs</h1>
+﻿<h1>Book Clubs</h1>
 <div>
     <table class="table table-bordered" *ngIf="bookClubs">
         <thead>
@@ -14,7 +14,7 @@
                     <span>
                         <button class="btn" (click)="editBookClub(bookClub.bookClubId)" title="Edit"><i
                                 class="fa fa-edit"></i></button>
-                        <button class="btn"><i class="fa fa-eye" title="View"></i></button>
+                        <button class="btn" (click)="viewBookClub(bookClub.bookClubId)"><i class="fa fa-eye" title="View"></i></button>
                         <button class="btn" (click)="deleteBookClub(bookClub.bookClubId)" title="Delete"><i class="fa fa-trash-o"></i></button>
                     </span>
                 </td>

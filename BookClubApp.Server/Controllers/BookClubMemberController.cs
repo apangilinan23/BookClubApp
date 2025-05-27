@@ -1,4 +1,5 @@
-﻿using BookClubApp.Server.Services;
+﻿using BookClubApp.Server.Models;
+using BookClubApp.Server.Services;
 using BookClubApp.Server.View_Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,8 +18,13 @@ namespace BookClubApp.Server.Controllers
         [HttpGet("{bookClubId}")]
         public IEnumerable<ClubMemberViewModel> GetAll(int bookClubId)
         {
-            var result = _memberService.GetAll(bookClubId);
-            return result;
+            return _memberService.GetAll(bookClubId);
+        }
+
+        [HttpGet("GetBooksByMember/{memberId}")]
+        public BooksReadViewModel GetBooksByMember(int memberId)
+        {
+            return _memberService.GetAllBooksReadByMember(memberId);            
         }
     }
 }

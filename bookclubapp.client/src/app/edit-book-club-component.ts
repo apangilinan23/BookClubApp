@@ -16,7 +16,6 @@ interface BookClub {
 })
 export class EditBookClubComponent implements OnInit {
   public bookClubId: number = 0;
-  public hideComponent: boolean = false;
   public bookClub: BookClub = { bookClubId: 0, bookClubTitle: '' };
   editBookClubForm = this.formBuilder.group({
     bookClubId: 0,
@@ -40,7 +39,6 @@ export class EditBookClubComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.hideComponent = false;
     
     var paramField = this.route.snapshot.paramMap.get('bookClubId');
     let paramVal = paramField ? Number(paramField) : null;
@@ -61,7 +59,7 @@ export class EditBookClubComponent implements OnInit {
   }
 
   back() {
-    this.hideComponent = true;
+    // this.hideComponent = true;
     this.location.replaceState('');
     window.location.reload();
   }

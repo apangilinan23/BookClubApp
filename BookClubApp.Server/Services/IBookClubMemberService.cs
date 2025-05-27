@@ -6,5 +6,7 @@ namespace BookClubApp.Server.Services
     public interface IBookClubMemberService
     {
         public List<ClubMemberViewModel> GetAll(int bookClubId);
+
+        public BooksReadViewModel GetAllBooksReadByMember(int memberId);        
     }
 }

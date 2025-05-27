@@ -1,0 +1,51 @@
+﻿<div class="row">
+    <div class="col-6">
+        <h1>{{bookClub.bookClubTitle}} club members</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="display-6" style="width: 40%;">Name</th>
+                    <th class="display-6" style="width: 30%;">Books</th>
+                    <th class="display-6" style="width: 30%;">Completed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let bookClubMember of bookClubMembers">
+                    <td>{{ bookClubMember.name }}</td>
+                    <td><button class="btn" (click)="getBooksByMember(bookClubMember.memberId)" title="View books"><i
+                                class="fa fa-book"></i> {{bookClubMember.booksOnHand}}</button></td>
+                    <td *ngIf="bookClubMember.booksRead > 0"><span style="color: green;"><i
+                                class="fa fa-check-circle-o"></i>
+                            {{bookClubMember.booksRead}}</span></td>
+                    <td *ngIf="bookClubMember.booksRead < 1"><span style="color: red;"><i
+                                class="fa fa-check-circle-o"></i>
+                            {{bookClubMember.booksRead}}</span></td>
+
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    </div>
+    <div class="col-6" *ngIf="showBooksReadPanel">
+        <h1>{{booksReadByMember.name}}'s books</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="display-6">Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of booksReadByMember.books">
+                    <td>{{ book }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    </div>
+</div>
+<div class="row">
+    <div class="col-2 mx-4">
+        <button class="btn btn-primary" (click)="back()"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;
+            Back&nbsp;&nbsp;&nbsp;&nbsp;</button>&nbsp;
+    </div>
+</div>

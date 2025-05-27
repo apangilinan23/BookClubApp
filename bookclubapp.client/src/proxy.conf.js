@@ -7,6 +7,7 @@ const PROXY_CONFIG = [
   {
     context: [
       "/bookclub",
+      "/bookclubmember"
     ],
     target,
     secure: false

@@ -7,5 +7,7 @@
         public string Name { get; set; }
 
         public int BooksRead { get; set; }
+
+        public int BooksOnHand { get; set; }
     }
 }

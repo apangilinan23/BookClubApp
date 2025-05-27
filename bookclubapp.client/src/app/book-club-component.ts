@@ -49,6 +49,15 @@ export class BookClubComponent implements OnInit {
       });
   }
 
+  viewBookClub(bookClubId: number) {
+    this.router.navigate(['view-book-club', bookClubId])
+      .catch((err) => {
+        console.log(err)
+      }).then(() => {
+        this.onEdit.emit(true)
+      });
+  }
+
   deleteBookClub(bookClubId: number) {
     if (confirm("Are you sure you want to delete this club?")) {
       if (bookClubId !== 0) {

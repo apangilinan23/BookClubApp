@@ -9,13 +9,15 @@ import { CommonModule } from '@angular/common';
 import { EditBookClubComponent } from './edit-book-club-component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddBookClubComponent } from './add-book-club-component';
+import { ViewBookClubComponent } from './view-book-club-component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookClubComponent,
     EditBookClubComponent,
-    AddBookClubComponent
+    AddBookClubComponent,
+    ViewBookClubComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

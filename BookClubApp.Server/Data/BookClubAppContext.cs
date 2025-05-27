@@ -34,6 +34,18 @@ namespace BookClubApp.Server.Data
             .WithOne(e => e.BookClub)
             .HasForeignKey(e => e.BookClubId)
             .IsRequired(false);
+
+            modelBuilder.Entity<Book>()
+            .HasOne(e => e.BookClubMember)
+            .WithOne(e => e.Book)
+            .HasForeignKey<BookClubMember>(e => e.BookId)
+            .IsRequired(false);
+
+            modelBuilder.Entity<Member>()
+            .HasOne(e => e.BookClubMember)
+            .WithOne(e => e.Member)
+            .HasForeignKey<BookClubMember>(e => e.MemberId)
+            .IsRequired(false);
         }
     }
 }
