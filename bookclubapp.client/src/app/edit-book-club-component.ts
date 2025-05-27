@@ -11,6 +11,7 @@ interface BookClub {
 }
 
 @Component({
+  selector: 'edit-book',
   templateUrl: './edit-book-club-component.html',
   styleUrl: './edit-book-club-component.css'
 })

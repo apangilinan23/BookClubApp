@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd, Event } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   public hideComponent: boolean = false;
+
+    constructor(private router: Router) { }
+  
   
   ngOnInit(): void {
     this.hideComponent = false;
+
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        if (event.url !== '/') {
+          this.hideComponent = true;
+        } 
+      }
+    });
   }
 
   onEditBookClub(willHide: boolean){
