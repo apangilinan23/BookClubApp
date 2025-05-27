@@ -19,7 +19,7 @@ namespace BookClubAppTests
         }
 
         [Test]
-        public void BookClubMemberController_GetAllByClubId_ShoudGetAll()
+        public void GetAllByClubId_Valid_ShoudGetAll()
         {
             //arrange
             var getAllMock = new List<ClubMemberViewModel>
